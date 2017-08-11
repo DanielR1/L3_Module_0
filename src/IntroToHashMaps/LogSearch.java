@@ -87,14 +87,34 @@ public class LogSearch implements ActionListener {
 		}
 		if (e.getSource() == button3) {
 			String biglist = "";
+			
+		if(map.size()==0){
+			JOptionPane.showMessageDialog(null, "ERROR: No entries in log!");
+		}
+		else{
 			for (Integer i : map.keySet()) {
 				biglist += "ID: " + i + " Name: " + map.get(i) + "\n";
 			}
+		
 			JOptionPane.showMessageDialog(null, "" + biglist);
-
+		}
 		}
 		if (e.getSource() == button4) {
-			String delIDs = JOptionPane.showInputDialog("Enter an ID to remove");//
+			String delIDs = JOptionPane.showInputDialog("Enter an ID to remove");
+			int delID = Integer.parseInt(delIDs);
+			if(map.size()==0){
+				JOptionPane.showMessageDialog(null, "ERROR: No entries in log!");
+			}
+			else{
+			if (map.get(delID)==null){
+				JOptionPane.showMessageDialog(null, "Error, entry not found!");
+			}
+			else{
+				
+				JOptionPane.showMessageDialog(null, "Entry #"+delID+" of "+map.get(delID)+" removed");
+				map.remove(delID);
+			}
+			}
 		}
 
 	}

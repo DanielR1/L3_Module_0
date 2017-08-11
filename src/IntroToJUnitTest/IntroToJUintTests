@@ -13,6 +13,6 @@ Delete the call to the fail method and run it again.
 Did you see a green bar?
 
 Ask your teacher to explain: 
-asserEquals(Object, Object);
+assertEquals(Object, Object);
 assertFalse(Object);
 assertTrue(Object);
